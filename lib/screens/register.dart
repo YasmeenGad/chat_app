@@ -1,12 +1,11 @@
 import 'package:chat_app/constant.dart';
-import 'package:chat_app/screens/register.dart';
 import 'package:chat_app/widgets/custom_button.dart';
 import 'package:chat_app/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
 
-class Login extends StatelessWidget {
-  const Login({super.key});
-  static const String routeName = "login";
+class Register extends StatelessWidget {
+  const Register({super.key});
+  static const String routeName = "register";
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +35,7 @@ class Login extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  "LOGIN",
+                  "REGISTER",
                   style: TextStyle(
                     fontSize: 24,
                     color: Colors.white,
@@ -63,7 +62,7 @@ class Login extends StatelessWidget {
                   height: 15,
                 ),
                 CustomButton(
-                  txt: "Login",
+                  txt: "Register",
                 ),
                 const SizedBox(
                   height: 15,
@@ -72,16 +71,16 @@ class Login extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "Don't have an account? ",
+                      "Already have an account? ",
                       style: TextStyle(color: Colors.white),
                     ),
                     InkWell(
                       onTap: () {
-                        Navigator.pushNamed(context, Register.routeName);
+                        Navigator.pop(context);
                       },
                       child: Text(
-                        "Register ",
-                        style: TextStyle(color: Colors.white.withOpacity(0.5)),
+                        "Login",
+                        style: TextStyle(color: Colors.white),
                       ),
                     ),
                   ],
