@@ -1,11 +1,14 @@
+import 'package:chat_app/components/create_user_with_email_and_password.dart';
 import 'package:chat_app/constant.dart';
 import 'package:chat_app/widgets/custom_button.dart';
 import 'package:chat_app/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
 
 class Register extends StatelessWidget {
-  const Register({super.key});
+  Register({super.key});
   static const String routeName = "register";
+  TextEditingController email = TextEditingController();
+  TextEditingController password = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -51,18 +54,24 @@ class Register extends StatelessWidget {
                 child: Column(
               children: [
                 CustomTextField(
+                  mycontroller: email,
                   hintText: "Email",
                 ),
                 const SizedBox(
                   height: 8,
                 ),
                 CustomTextField(
+                  mycontroller: password,
                   hintText: "Password",
                 ),
                 const SizedBox(
                   height: 15,
                 ),
                 CustomButton(
+                  ontap: () {
+                    CreateAccountWithEmailAndPassword(
+                        email.text, password.text, context);
+                  },
                   txt: "Register",
                 ),
                 const SizedBox(

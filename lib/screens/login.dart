@@ -64,6 +64,7 @@ class Login extends StatelessWidget {
                   height: 15,
                 ),
                 CustomButton(
+                  ontap: () {},
                   txt: "Login",
                 ),
                 const SizedBox(
