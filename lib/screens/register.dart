@@ -13,10 +13,10 @@ class Register extends StatelessWidget {
       backgroundColor: kPrimaryColor,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8),
-        child: Column(
+        child: ListView(
           children: [
-            Spacer(
-              flex: 1,
+            SizedBox(
+              height: 75,
             ),
             Image.asset(
               "assets/images/scholar.png",
@@ -24,13 +24,14 @@ class Register extends StatelessWidget {
             ),
             Text(
               "Scholar Chat",
+              textAlign: TextAlign.center,
               style: TextStyle(
                   fontSize: 32,
                   color: Colors.white,
                   fontFamily: 'pacifico-regular'),
             ),
-            Spacer(
-              flex: 2,
+            SizedBox(
+              height: 75,
             ),
             Row(
               children: [
@@ -80,15 +81,15 @@ class Register extends StatelessWidget {
                       },
                       child: Text(
                         "Login",
-                        style: TextStyle(color: Colors.white),
+                        style: TextStyle(color: Colors.white.withOpacity(0.5)),
                       ),
                     ),
                   ],
                 ),
               ],
             )),
-            Spacer(
-              flex: 3,
+            SizedBox(
+              height: 75,
             ),
           ],
         ),

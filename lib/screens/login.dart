@@ -14,10 +14,10 @@ class Login extends StatelessWidget {
       backgroundColor: kPrimaryColor,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8),
-        child: Column(
+        child: ListView(
           children: [
-            Spacer(
-              flex: 1,
+            const SizedBox(
+              height: 75,
             ),
             Image.asset(
               "assets/images/scholar.png",
@@ -25,13 +25,14 @@ class Login extends StatelessWidget {
             ),
             Text(
               "Scholar Chat",
+              textAlign: TextAlign.center,
               style: TextStyle(
                   fontSize: 32,
                   color: Colors.white,
                   fontFamily: 'pacifico-regular'),
             ),
-            Spacer(
-              flex: 2,
+            const SizedBox(
+              height: 75,
             ),
             Row(
               children: [
@@ -88,8 +89,8 @@ class Login extends StatelessWidget {
                 ),
               ],
             )),
-            Spacer(
-              flex: 3,
+            const SizedBox(
+              height: 75,
             ),
           ],
         ),
