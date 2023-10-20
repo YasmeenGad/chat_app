@@ -1,3 +1,4 @@
+import 'package:chat_app/screens/chat.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -9,8 +10,7 @@ Future<void> CreateAccountWithEmailAndPassword(
       email: email,
       password: password,
     );
-    ScaffoldMessenger.of(context)
-        .showSnackBar(SnackBar(content: Center(child: Text("Success"))));
+    Navigator.pushReplacementNamed(context, Chat.routeName);
   } on FirebaseAuthException catch (e) {
     if (e.code == 'weak-password') {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(

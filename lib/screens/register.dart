@@ -89,6 +89,7 @@ class _RegisterState extends State<Register> {
                             setState(() {});
                             CreateAccountWithEmailAndPassword(
                                 email.text, password.text, context);
+
                             isClicked = false;
                             setState(() {});
                           }

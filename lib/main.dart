@@ -1,3 +1,4 @@
+import 'package:chat_app/screens/chat.dart';
 import 'package:chat_app/screens/login.dart';
 import 'package:chat_app/screens/register.dart';
 import 'package:flutter/material.dart';
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
       routes: {
         Login.routeName: (context) => Login(),
         Register.routeName: (context) => Register(),
+        Chat.routeName: (context) => Chat(),
       },
     );
   }
