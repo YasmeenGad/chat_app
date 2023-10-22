@@ -14,6 +14,7 @@ class Chat extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var email = ModalRoute.of(context)!.settings.arguments as String;
     return StreamBuilder<QuerySnapshot>(
         stream: message.orderBy('createdAt', descending: true).snapshots(),
         builder:
@@ -70,6 +71,7 @@ class Chat extends StatelessWidget {
                                   message.add({
                                     'message': mgs.text,
                                     'createdAt': DateTime.now(),
+                                    'id': email
                                   });
                                   mgs.clear();
                                   _controller.animateTo(

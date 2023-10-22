@@ -7,7 +7,7 @@ Future<void> LoginWithEmailAndPassword(
   try {
     final credential = await FirebaseAuth.instance
         .signInWithEmailAndPassword(email: email, password: password);
-    Navigator.pushReplacementNamed(context, Chat.routeName);
+    Navigator.pushReplacementNamed(context, Chat.routeName, arguments: email);
   } on FirebaseAuthException catch (e) {
     if (e.code == 'user-not-found') {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
