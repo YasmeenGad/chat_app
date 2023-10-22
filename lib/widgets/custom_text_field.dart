@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
-  CustomTextField({this.hintText, this.mycontroller});
+  CustomTextField({this.hintText, this.mycontroller, this.obsecure = false});
   String? hintText;
   var mycontroller;
+  bool obsecure;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      obscureText: obsecure,
       controller: mycontroller,
       validator: (data) {
         if (data!.isEmpty) {

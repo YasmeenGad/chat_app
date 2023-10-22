@@ -76,6 +76,7 @@ class _RegisterState extends State<Register> {
                         height: 8,
                       ),
                       CustomTextField(
+                        obsecure: true,
                         mycontroller: password,
                         hintText: "Password",
                       ),

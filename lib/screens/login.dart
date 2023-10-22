@@ -77,6 +77,7 @@ class _LoginState extends State<Login> {
                         height: 8,
                       ),
                       CustomTextField(
+                        obsecure: true,
                         mycontroller: password,
                         hintText: "Password",
                       ),

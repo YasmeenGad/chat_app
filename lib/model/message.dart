@@ -2,11 +2,12 @@ import 'package:chat_app/constant.dart';
 
 class Message {
   String? message;
+  String? id;
 
-  Message({this.message});
+  Message({this.message, this.id});
 
   factory Message.fromJson(json) {
-    return Message(message: json['message']);
+    return Message(message: json['message'], id: json['id']);
   }
 
   Map<String, dynamic> toJson() {

@@ -50,9 +50,12 @@ class Chat extends StatelessWidget {
                           controller: _controller,
                           itemCount: messageList.length,
                           itemBuilder: (context, index) {
-                            return ChatBuble(
-                              message: messageList[index],
-                            );
+                            return messageList[index].id == email
+                                ? ChatBuble(
+                                    message: messageList[index],
+                                  )
+                                : ChatBubleForFriend(
+                                    message: messageList[index]);
                           }),
                     ),
                     Padding(
