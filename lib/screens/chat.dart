@@ -15,7 +15,7 @@ class Chat extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<QuerySnapshot>(
-        stream: message.orderBy('createdAt').snapshots(),
+        stream: message.orderBy('createdAt', descending: true).snapshots(),
         builder:
             ((BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (snapshot.hasData) {
@@ -45,6 +45,7 @@ class Chat extends StatelessWidget {
                   children: [
                     Expanded(
                       child: ListView.builder(
+                          reverse: true,
                           controller: _controller,
                           itemCount: messageList.length,
                           itemBuilder: (context, index) {
@@ -72,7 +73,7 @@ class Chat extends StatelessWidget {
                                   });
                                   mgs.clear();
                                   _controller.animateTo(
-                                    _controller.position.maxScrollExtent,
+                                    0,
                                     duration: Duration(milliseconds: 500),
                                     curve: Curves.fastOutSlowIn,
                                   );
