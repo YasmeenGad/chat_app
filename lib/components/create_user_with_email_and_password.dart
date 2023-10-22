@@ -10,7 +10,11 @@ Future<void> CreateAccountWithEmailAndPassword(
       email: email,
       password: password,
     );
-    Navigator.pushReplacementNamed(context, Chat.routeName);
+    Navigator.pushNamedAndRemoveUntil(
+      context,
+      Chat.routeName,
+      (route) => false,
+    );
   } on FirebaseAuthException catch (e) {
     if (e.code == 'weak-password') {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
